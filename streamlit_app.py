@@ -267,7 +267,7 @@ else:
 
 st.subheader("Architecture")
 st.code("""
-**User Query**
+User Query
     │
     ├──► Entity Extraction (Gemini Flash)
     │         judges / acts / sections / concepts
