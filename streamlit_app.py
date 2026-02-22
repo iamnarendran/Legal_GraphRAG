@@ -260,11 +260,26 @@ else:
     1. Your question is parsed to extract legal entities (judges, acts, sections, concepts)
     2. **Graph traversal** finds cases linked to those entities in Neo4j
     3. **Vector search** finds semantically similar cases using embeddings
-    4. Results are merged and an LLM synthesizes a cited answer
+    4. Results are merged, and an LLM synthesises a cited answer
 
     👈 Use the sidebar examples to get started, or type your own question above.
     """)
 
-    st.subheader("Architecture")
-    st.image("https://mermaid.ink/img/pako:eNpVkMFqwzAMhl_F-NRC90KhkLVj2WFjl-2w4YOxlcbUsYOtlBHSd5-dpJTpJCR9-n9JHqFxmqCCzlPfkX3Gd2_0ER-H3Q7fRdPQZmr1QV_UXbfKjXiQVxc-T4LV1ikFVYHiCYqikILMFpSiNJQLmBJSoFRbICVkCvIDOaTMJb7-vqxZaLmiEuQ3wfknfDgNx8a5-Xbfv1DP93AcAAAA",
-             caption="Query → Entity Extraction → Graph + Vector Search → LLM Synthesis → Cited Answer")
+   st.subheader("Architecture")
+   st.code("""
+          User Query
+              │
+              ├──► Entity Extraction (Gemini Flash)
+              │         judges / acts / sections / concepts
+              │
+              ├──► Graph Traversal (Neo4j Cypher)
+              │         (Case)-[:DECIDED_BY]->(Judge)
+              │         (Case)-[:REFERENCES_SECTION]->(Section)
+              │         (Case)-[:INVOLVES_CONCEPT]->(LegalConcept)
+              │
+              ├──► Vector Search (Neo4j vector index)
+              │         all-MiniLM-L6-v2 embeddings, cosine similarity
+              │
+              └──► Merge + LLM Synthesis (Gemini Pro)
+                        Cited answer with source cases
+          """, language="text")
