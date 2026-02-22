@@ -265,21 +265,21 @@ else:
     👈 Use the sidebar examples to get started, or type your own question above.
     """)
 
-   st.subheader("Architecture")
-   st.code("""
-          User Query
-              │
-              ├──► Entity Extraction (Gemini Flash)
-              │         judges / acts / sections / concepts
-              │
-              ├──► Graph Traversal (Neo4j Cypher)
-              │         (Case)-[:DECIDED_BY]->(Judge)
-              │         (Case)-[:REFERENCES_SECTION]->(Section)
-              │         (Case)-[:INVOLVES_CONCEPT]->(LegalConcept)
-              │
-              ├──► Vector Search (Neo4j vector index)
-              │         all-MiniLM-L6-v2 embeddings, cosine similarity
-              │
-              └──► Merge + LLM Synthesis (Gemini Pro)
-                        Cited answer with source cases
-          """, language="text")
+st.subheader("Architecture")
+st.code("""
+User Query
+    │
+    ├──► Entity Extraction (Gemini Flash)
+    │         judges / acts / sections / concepts
+    │
+    ├──► Graph Traversal (Neo4j Cypher)
+    │         (Case)-[:DECIDED_BY]->(Judge)
+    │         (Case)-[:REFERENCES_SECTION]->(Section)
+    │         (Case)-[:INVOLVES_CONCEPT]->(LegalConcept)
+    │
+    ├──► Vector Search (Neo4j vector index)
+    │         all-MiniLM-L6-v2 embeddings, cosine similarity
+    │
+    └──► Merge + LLM Synthesis (Gemini Pro)
+              Cited answer with source cases
+""", language="text")
