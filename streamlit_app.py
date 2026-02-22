@@ -269,7 +269,7 @@ st.subheader("Architecture")
 st.code("""
 User Query
     │
-    ├──► Entity Extraction
+    ├──► Entity Extraction (Openai/gpt-oss-20b)
     │         judges / acts / sections / concepts
     │
     ├──► Graph Traversal (Neo4j Cypher)
@@ -280,6 +280,6 @@ User Query
     ├──► Vector Search (Neo4j vector index)
     │         all-MiniLM-L6-v2 embeddings, cosine similarity
     │
-    └──► Merge + LLM Synthesis
+    └──► Merge + LLM Synthesis (Openai/gpt-oss-20b)
               Cited answer with source cases
 """, language="text")
