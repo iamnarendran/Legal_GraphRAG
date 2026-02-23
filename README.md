@@ -28,7 +28,8 @@ The result is legal research that understands *meaning*, not just keywords.
 
 ## 🏗️ Architecture
 
-```mermaid
+```
+mermaid
 config:
   theme: redux-dark
 graph TD
@@ -58,6 +59,8 @@ graph TD
     D -.->|Cypher Query| I
     E -.->|Cosine Similarity| I
 ```
+<img width="4710" height="3770" alt="Mermaid Chart - Create complex, visual diagrams with text -2026-02-23-150654" src="https://github.com/user-attachments/assets/aa6a0029-3062-4da0-99f4-275f2536941b" />
+
 
 ---
 
