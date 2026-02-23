@@ -28,39 +28,7 @@ The result is legal research that understands *meaning*, not just keywords.
 
 ## 🏗️ Architecture
 
-```
-mermaid
-config:
-  theme: redux-dark
-graph TD
-    A[User Query] --> B["Entity Extractor
-    GPT-OSS-20B via OpenRouter"]
-    B --> D["Graph Traversal
-    Neo4j Cypher"]
-    B --> E["Vector Search
-    Neo4j Vector Index"]
-    D --> F["Merge & Deduplicate
-    Graph hits prioritized"]
-    E --> F
-    F --> G["LLM Synthesis
-    GPT-OSS-20B"]
-    G --> H["Cited Answer
-    with Source Cases"]
-
-    subgraph Knowledge Graph
-        I[Case] -->|DECIDED_BY| J[Judge]
-        I -->|CITES_ACT| K[Act]
-        I -->|REFERENCES_SECTION| L[Section]
-        L -->|PART_OF| K
-        I -->|INVOLVES_CONCEPT| M[LegalConcept]
-        I -->|CITES_CASE| I
-    end
-
-    D -.->|Cypher Query| I
-    E -.->|Cosine Similarity| I
-```
 <img width="4710" height="3770" alt="Mermaid Chart - Create complex, visual diagrams with text -2026-02-23-150654" src="https://github.com/user-attachments/assets/aa6a0029-3062-4da0-99f4-275f2536941b" />
-
 
 ---
 
