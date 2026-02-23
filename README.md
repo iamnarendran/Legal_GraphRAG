@@ -29,25 +29,36 @@ The result is legal research that understands *meaning*, not just keywords.
 ## 🏗️ Architecture
 
 ```mermaid
+---
+config:
+  theme: redux-dark
+---
 graph TD
-    A[User Query] --> B[Entity Extractor\nGPT-OSS-20B via OpenRouter]
-    B --> C{Entities Found?}
-    C -->|Judges / Acts / Sections / Concepts| D[Graph Traversal\nNeo4j Cypher]
-    C -->|Semantic meaning| E[Vector Search\nNeo4j Vector Index]
-    D --> F[Merge & Deduplicate\nGraph hits prioritized]
+    A[User Query] --> B["Entity Extractor
+    GPT-OSS-20B via OpenRouter"]
+    B --> D["Graph Traversal
+    Neo4j Cypher"]
+    B --> E["Vector Search
+    Neo4j Vector Index"]
+    D --> F["Merge & Deduplicate
+    Graph hits prioritized"]
     E --> F
-    F --> G[LLM Synthesis\nGPT-OSS-20B]
-    G --> H[Cited Answer\nwith Source Cases]
-subgraph Knowledge Graph
-    I[Case] -->|DECIDED_BY| J[Judge]
-    I -->|CITES_ACT| K[Act]
-    I -->|REFERENCES_SECTION| L[Section]
-    L -->|PART_OF| K
-    I -->|INVOLVES_CONCEPT| M[LegalConcept]
-    I -->|CITES_CASE| I
-end
-   D -.->|Cypher Query| Knowledge Graph
-   E -.->|Cosine Similarity| Knowledge Graph
+    F --> G["LLM Synthesis
+    GPT-OSS-20B"]
+    G --> H["Cited Answer
+    with Source Cases"]
+
+    subgraph Knowledge Graph
+        I[Case] -->|DECIDED_BY| J[Judge]
+        I -->|CITES_ACT| K[Act]
+        I -->|REFERENCES_SECTION| L[Section]
+        L -->|PART_OF| K
+        I -->|INVOLVES_CONCEPT| M[LegalConcept]
+        I -->|CITES_CASE| I
+    end
+
+    D -.->|Cypher Query| I
+    E -.->|Cosine Similarity| I
 ```
 
 ---
