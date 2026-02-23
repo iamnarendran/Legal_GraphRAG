@@ -29,10 +29,8 @@ The result is legal research that understands *meaning*, not just keywords.
 ## 🏗️ Architecture
 
 ```mermaid
----
 config:
   theme: redux-dark
----
 graph TD
     A[User Query] --> B["Entity Extractor
     GPT-OSS-20B via OpenRouter"]
