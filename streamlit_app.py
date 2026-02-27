@@ -176,7 +176,7 @@ with st.sidebar:
     st.subheader("💡 Try These Queries")
     examples = [
         "Cases decided by B.R. Gavai on Section 302 murder where conviction was set aside",
-        Cases on adverse possession and land ownership dispute",
+        "Cases on adverse possession and land ownership dispute",
         "Cases involving natural justice principles",
         "Land acquisition compensation disputes 2023",
     ]
