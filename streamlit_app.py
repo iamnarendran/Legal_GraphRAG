@@ -175,8 +175,8 @@ with st.sidebar:
     st.divider()
     st.subheader("💡 Try These Queries")
     examples = [
-        "Cases decided by M. R. Shah",
-        "Criminal appeals involving Section 302 IPC",
+        "Cases decided by B.R. Gavai on Section 302 murder where conviction was set aside",
+        Cases on adverse possession and land ownership dispute",
         "Cases involving natural justice principles",
         "Land acquisition compensation disputes 2023",
     ]
