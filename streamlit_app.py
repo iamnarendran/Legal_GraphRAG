@@ -206,13 +206,14 @@ query = st.text_area(
 
 search_clicked = st.button("🔍 Search Knowledge Graph", type="primary")
 
+
 if search_clicked and query.strip():
     with st.spinner("Searching graph and generating answer..."):
         start  = time.time()
         result = graphrag_answer(query)
         elapsed = time.time() - start
- 
-   st.divider()
+
+    st.divider()
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("⏱ Time",        f"{elapsed:.1f}s")
     m2.metric("🔗 Graph Hits", result["graph_hits"])
