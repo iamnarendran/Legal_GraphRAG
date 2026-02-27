@@ -175,8 +175,7 @@ with st.sidebar:
     st.divider()
     st.subheader("💡 Try These Queries")
     examples = [
-        "Cases on trade tax exemption and diversification",
-        "Cases decided by M. R. Shah on land acquisition",
+        "Cases decided by M. R. Shah",
         "Criminal appeals involving Section 302 IPC",
         "Cases involving natural justice principles",
         "Land acquisition compensation disputes 2023",
