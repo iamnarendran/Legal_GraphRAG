@@ -214,8 +214,6 @@ if search_clicked and query.strip():
         elapsed = time.time() - start
 
     st.divider()
-
-
     with col_ans:
         st.subheader("📋 Answer")
         if result["sources"]:
