@@ -214,6 +214,15 @@ if search_clicked and query.strip():
         elapsed = time.time() - start
 
     st.divider()
+    m1, m2, m3, m4 = st.columns(4)
+    m1.metric("⏱ Time",        f"{elapsed:.1f}s")
+    m2.metric("🔗 Graph Hits", result["graph_hits"])
+    m3.metric("🔍 Vector Hits",result["vector_hits"])
+    m4.metric("📄 Sources",    len(result["sources"]))
+    st.divider()
+
+    col_ans, col_src = st.columns([3,2], gap="large")
+
     with col_ans:
         st.subheader("📋 Answer")
         if result["sources"]:
@@ -229,7 +238,6 @@ if search_clicked and query.strip():
                 tags.append(f"`{label}: {val}`")
         if tags:
             st.caption("Entities detected: " + "  |  ".join(tags))
-
     with col_src:
         st.subheader("📚 Source Cases")
         for i, case in enumerate(result["sources"], 1):
