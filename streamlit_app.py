@@ -138,7 +138,7 @@ def synthesize_answer(query, cases):
             model="openai/gpt-oss-20b",
             messages=[{"role":"system","content":SYNTHESIS_PROMPT},
                       {"role":"user","content":f"Question: {query}\n\nCASES:\n{context}"}],
-            max_tokens=1000, temperature=0.2)
+            max_tokens=1000, temperature=0.0)
         return resp.choices[0].message.content.strip()
     except Exception as e:
         return f"Could not generate answer: {e}"
@@ -175,10 +175,10 @@ with st.sidebar:
     st.divider()
     st.subheader("💡 Try These Queries")
     examples = [
-        "Tell me the Judgements of Life Imprisonment on 2024 by date and summary simply",
-        "Cases on adverse possession and land ownership dispute",
-        "Cases involving natural justice principles",
-        "Land acquisition compensation disputes 2023",
+        "Tell me the Judgements of Life Imprisonment on 2024 by date and give summary",
+        "Tell me some cases on convition order by year ",
+        "Explain me what is Acquittal with some cases on Acquittal",
+        "Tell me some judgements or cases on Illicit relationships",
     ]
     for ex in examples:
         if st.button(ex, use_container_width=True, key=ex):
@@ -201,7 +201,7 @@ query = st.text_area(
     "**Ask a legal question:**",
     value=st.session_state.get("query_input",""),
     height=100,
-    placeholder="e.g. Cases on land acquisition compensation decided by M. R. Shah"
+    placeholder="e.g. Tell me some cases on convition"
 )
 
 search_clicked = st.button("🔍 Search Knowledge Graph", type="primary")
