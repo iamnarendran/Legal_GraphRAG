@@ -213,6 +213,14 @@ if search_clicked and query.strip():
         result = graphrag_answer(query)
         elapsed = time.time() - start
 
+    st.divider()
+    m1, m2, m3, m4 = st.columns(4)
+    m1.metric("⏱️ Time",        f"{elapsed:.1f}s")
+    m2.metric("🔗 Graph Hits", result["graph_hits"])
+    m3.metric("🔍 Vector Hits",result["vector_hits"])
+    m4.metric("📄 Sources",len(result["sources"]))
+    st.divider()
+
     
 
     col_ans, col_src = st.columns([3,2], gap="large")
