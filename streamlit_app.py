@@ -176,7 +176,7 @@ with st.sidebar:
     st.subheader("💡 Try These Queries")
     examples = [
         "Tell me the Judgements of Life Imprisonment on 2024 by date and give summary",
-        "Tell me some cases on convition order by year ",
+        "Tell me some cases on conviction order by year ",
         "Explain me what is Acquittal with some cases on Acquittal",
         "Tell me some judgements or cases on property rights",
     ]
