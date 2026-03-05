@@ -241,7 +241,6 @@ if search_clicked and query.strip():
             with st.expander(label):
                 st.markdown(f"**Citation:** `{case.get('citation','N/A')}`")
                 st.markdown(f"**Year:** {case.get('year','N/A')}")
-                st.markdown(f"**Via:** {case.get('retrieval_type','')} — {case.get('graph_path','')}")
                 if case.get("summary"):
                     st.markdown(f"**Summary:** {case['summary']}")
 
