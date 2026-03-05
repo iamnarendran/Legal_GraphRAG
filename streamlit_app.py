@@ -178,7 +178,7 @@ with st.sidebar:
         "Tell me the Judgements of Life Imprisonment on 2024 by date and give summary",
         "Tell me some cases on convition order by year ",
         "Explain me what is Acquittal with some cases on Acquittal",
-        "Tell me some judgements or cases on Illicit relationships",
+        "Tell me some judgements or cases on property rights",
     ]
     for ex in examples:
         if st.button(ex, use_container_width=True, key=ex):
