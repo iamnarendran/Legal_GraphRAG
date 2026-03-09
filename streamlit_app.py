@@ -56,7 +56,7 @@ def extract_query_entities(query):
     empty = {"judges":[],"acts":[],"sections":[],"concepts":[],"year_from":None,"year_to":None}
     try:
         resp = llm.chat.completions.create(
-            model="openai/gpt-oss-20b",
+            model="openrouter/free",
             messages=[{"role":"system","content":ENTITY_PROMPT},
                       {"role":"user","content":f"Query: {query}"}],
             max_tokens=200, temperature=0.0)
