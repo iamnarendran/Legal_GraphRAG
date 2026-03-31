@@ -13,12 +13,12 @@
 
 ## 📌 What is this?
 
-Traditional legal research relies on keyword-based search — you search "Article 21" and get documents containing that exact phrase. **LegalGraph AI thinks differently.**
+Traditional legal research relies on keyword-based search you search "Article 21" and get documents containing that exact phrase. **LegalGraph AI thinks differently.**
 
 It models the relationships between cases, judges, acts, sections, and legal concepts as a **knowledge graph**. When you ask *"Cases decided by M. R. Shah on land acquisition after 2020"*, the system:
 
 1. Understands you're asking about a **judge**, an **act**, and a **year range**
-2. Traverses the graph — *Judge → Cases → Acts* — to find precisely linked judgments
+2. Traverses the graph  *Judge → Cases → Acts* to find precisely linked judgments
 3. Simultaneously runs semantic vector search to catch conceptually related cases
 4. Synthesizes a cited, structured answer using an LLM
 
